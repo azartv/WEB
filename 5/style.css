@@ -1,0 +1,180 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: gray;
+    color: #111;
+    /* flex-структура всієї сторінки: header — main — footer */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ---------- Header + nav ---------- */
+.site-header {
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.main-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 30px;
+}
+
+.main-nav a[aria-current="page"] {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* ---------- Main ---------- */
+.site-main {
+    flex: 1;
+    padding: 20px 0;
+}
+
+.album,
+.artist {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.artist-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.album-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.album-cover {
+    flex: 0 1 300px;
+}
+
+.album-cover img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.tracklist {
+    flex: 1 1 400px;
+}
+
+.tracklist-list {
+    columns: 2 220px;
+    column-gap: 3em;
+    padding: 12px 12px 12px 3em;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.tracklist-list li {
+    break-inside: avoid;
+}
+
+.artist-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.artist-photo {
+    flex: 0 1 300px;
+}
+
+.artist-photo img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.artist-bio {
+    flex: 1 1 300px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    padding: 15px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+/* ---------- Типографіка ---------- */
+h1,
+h2,
+h3 {
+    font-weight: bold;
+    text-align: left;
+    display: block;
+    margin: 5px;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
+ul {
+    list-style: none;
+}
+
+ol {
+    list-style-type: decimal-leading-zero;
+    padding-left: 2em;
+}
+
+.intro {
+    text-decoration: line-through;
+}
+
+em {
+    color: bisque;
+}
+
+strong {
+    text-shadow: #333 1px 1px;
+}
