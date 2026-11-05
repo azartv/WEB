@@ -1,0 +1,306 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: gray;
+    color: #111;
+    /* flex-структура всієї сторінки: header — main — footer */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ---------- Header + nav ---------- */
+.site-header {
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.main-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 30px;
+}
+
+.main-nav a[aria-current="page"] {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* ---------- Main ---------- */
+.site-main {
+    flex: 1;
+    padding: 20px 0;
+}
+
+.album,
+.artist {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.artist-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.album-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.album-cover {
+    flex: 0 1 300px;
+}
+
+.album-cover img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.tracklist {
+    flex: 1 1 400px;
+}
+
+.tracklist-list {
+    columns: 2 220px;
+    column-gap: 3em;
+    padding: 12px 12px 12px 3em;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.tracklist-list li {
+    break-inside: avoid;
+}
+
+.artist-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.artist-photo {
+    flex: 0 1 300px;
+}
+
+.artist-photo img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.artist-bio {
+    flex: 1 1 300px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    padding: 15px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+/* ---------- Типографіка ---------- */
+h1,
+h2,
+h3 {
+    font-weight: bold;
+    text-align: left;
+    display: block;
+    margin: 5px;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
+ul {
+    list-style: none;
+}
+
+ol {
+    list-style-type: decimal-leading-zero;
+    padding-left: 2em;
+}
+
+.intro {
+    text-decoration: line-through;
+}
+
+em {
+    color: bisque;
+}
+
+strong {
+    text-shadow: #333 1px 1px;
+}
+
+/* ---------- Форма зворотного зв'язку ---------- */
+/* Палітра підібрана під фон сторінки (gray): відтінки сірого + акцент bisque,
+   який уже використовується на сайті в em */
+.feedback {
+    margin-top: 30px;
+}
+
+.feedback-form {
+    display: block;
+    max-width: 600px;
+    margin: 15px auto 0;
+    padding: 25px;
+    color: #f2f2f2;
+    background-color: #4d4d4d;
+    border: 1px solid #666;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.feedback-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #f2f2f2;
+}
+
+.feedback-form input:not([type="radio"]):not([type="checkbox"]),
+.feedback-form select,
+.feedback-form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font: inherit;
+    color: #f2f2f2;
+    background-color: #3d3d3d;
+    border: 1px solid #6e6e6e;
+    border-radius: 8px;
+}
+
+.feedback-form ::placeholder {
+    color: #a8a8a8;
+}
+
+.feedback-form textarea {
+    resize: vertical;
+}
+
+.feedback-form input:not([type="radio"]):not([type="checkbox"]):focus,
+.feedback-form select:focus,
+.feedback-form textarea:focus {
+    border-color: bisque;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 228, 196, 0.3);
+}
+
+/* Радіокнопки та чекбокс: мітка в одному рядку з перемикачем */
+.radio-group {
+    border: 1px solid #6e6e6e;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+
+.radio-group legend {
+    padding: 0 6px;
+    font-weight: 600;
+    color: #f2f2f2;
+}
+
+.choice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 6px 0;
+}
+
+.choice input {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    accent-color: bisque;
+    cursor: pointer;
+}
+
+.feedback-form .choice label {
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.feedback-form .choice input:focus-visible {
+    outline: 2px solid bisque;
+    outline-offset: 2px;
+}
+
+.feedback-form input:user-invalid,
+.feedback-form select:user-invalid {
+    border-color: #e8a0a0;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font: inherit;
+    font-weight: 600;
+    color: #222;
+    background-color: bisque;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #f0cfa6;
+}
+
+button[type="submit"]:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+}
