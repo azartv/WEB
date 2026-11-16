@@ -1,0 +1,437 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: gray;
+    color: #111;
+  
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+
+.site-header {
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.main-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 30px;
+}
+
+.main-nav a[aria-current="page"] {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* ---------- Main ---------- */
+.site-main {
+    flex: 1;
+    padding: 20px 0;
+}
+
+.album,
+.artist {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.artist-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.album-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.album-cover {
+    flex: 0 1 300px;
+}
+
+.album-cover img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.tracklist {
+    flex: 1 1 400px;
+}
+
+.tracklist-list {
+    columns: 2 220px;
+    column-gap: 3em;
+    padding: 12px 12px 12px 3em;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.tracklist-list li {
+    break-inside: avoid;
+}
+
+.artist-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.artist-photo {
+    flex: 0 1 300px;
+}
+
+.artist-photo img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.artist-bio {
+    flex: 1 1 300px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    padding: 15px 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+/* ---------- Типографіка ---------- */
+h1,
+h2,
+h3 {
+    font-weight: bold;
+    text-align: left;
+    display: block;
+    margin: 5px;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
+ul {
+    list-style: none;
+}
+
+ol {
+    list-style-type: decimal-leading-zero;
+    padding-left: 2em;
+}
+
+.intro {
+    text-decoration: line-through;
+}
+
+em {
+    color: bisque;
+}
+
+strong {
+    text-shadow: #333 1px 1px;
+}
+
+/* ---------- Форма зворотного зв'язку ---------- */
+/* Палітра підібрана під фон сторінки (gray): відтінки сірого + акцент bisque,
+   який уже використовується на сайті в em */
+.feedback {
+    margin-top: 30px;
+}
+
+.feedback-form {
+    display: block;
+    max-width: 600px;
+    margin: 15px auto 0;
+    padding: 25px;
+    color: #f2f2f2;
+    background-color: #4d4d4d;
+    border: 1px solid #666;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.feedback-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #f2f2f2;
+}
+
+.feedback-form input:not([type="radio"]):not([type="checkbox"]),
+.feedback-form select,
+.feedback-form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font: inherit;
+    color: #f2f2f2;
+    background-color: #3d3d3d;
+    border: 1px solid #6e6e6e;
+    border-radius: 8px;
+}
+
+.feedback-form ::placeholder {
+    color: #a8a8a8;
+}
+
+.feedback-form textarea {
+    resize: vertical;
+}
+
+.feedback-form input:not([type="radio"]):not([type="checkbox"]):focus,
+.feedback-form select:focus,
+.feedback-form textarea:focus {
+    border-color: bisque;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 228, 196, 0.3);
+}
+
+/* Радіокнопки та чекбокс: мітка в одному рядку з перемикачем */
+.radio-group {
+    border: 1px solid #6e6e6e;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+
+.radio-group legend {
+    padding: 0 6px;
+    font-weight: 600;
+    color: #f2f2f2;
+}
+
+.choice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 6px 0;
+}
+
+.choice input {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    accent-color: bisque;
+    cursor: pointer;
+}
+
+.feedback-form .choice label {
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.feedback-form .choice input:focus-visible {
+    outline: 2px solid bisque;
+    outline-offset: 2px;
+}
+
+.feedback-form input:user-invalid,
+.feedback-form select:user-invalid {
+    border-color: #e8a0a0;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font: inherit;
+    font-weight: 600;
+    color: #222;
+    background-color: bisque;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #f0cfa6;
+}
+
+button[type="submit"]:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+}
+
+/* =====================================================
+   Практична №7: градієнти, тіні, transition і hover
+   Палітра: сірий фон сторінки + акцент bisque
+   ===================================================== */
+
+/* ---------- Завдання 1: градієнти ---------- */
+
+/* "Hero"-блок: заголовок сторінки */
+.artist-title,
+.album-header {
+    padding: 25px 20px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2b2b2b 0%, #4d4d4d 50%, #7a6a58 100%);
+    color: #ffffff;
+}
+
+.artist-title h1 a,
+.album-header h1 {
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+/* Радіальна підкладка для карток */
+.card,
+.album-history,
+.artist-bio {
+    padding: 15px;
+    border-radius: 12px;
+    background: radial-gradient(circle at top left, #fff8f0, #ffe4c4);
+}
+
+/* Кнопка з градієнтом */
+button[type="submit"] {
+    background-image: linear-gradient(to right, #c9a27a, #ffe4c4);
+    border: none;
+    border-radius: 8px;
+}
+
+/* ---------- Тіні ---------- */
+.card,
+article,
+.album-history,
+.artist-bio {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* ---------- Завдання 2: transition (у базовому стані) ---------- */
+header nav a,
+button,
+.btn-top,
+.card,
+.album-history,
+.artist-bio,
+.tracklist-list {
+    transition: transform 0.3s ease, box-shadow 0.3s ease,
+                background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ---------- Меню ---------- */
+header nav a {
+    position: relative;
+}
+
+header nav a:hover {
+    color: #7a5a3a;
+    text-decoration: none;
+    text-shadow: 0 0 8px rgba(255, 228, 196, 0.9);
+}
+
+/* Анімована лінія під посиланням */
+header nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: bisque;
+    transition: width 0.3s ease;
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+/* ---------- Кнопка ---------- */
+button[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.35);
+}
+
+button[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+/* ---------- Картки "ширяють" ---------- */
+.card:hover,
+.album-history:hover,
+.artist-bio:hover,
+.tracklist-list:hover {
+    transform: translateY(-6px) scale(1.015);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Фото: наближення ---------- */
+.album-cover,
+.artist-photo,
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.album-cover img,
+.artist-photo img,
+.gallery-item img {
+    transition: transform 0.4s ease-out;
+}
+
+.album-cover:hover img,
+.artist-photo:hover img,
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
